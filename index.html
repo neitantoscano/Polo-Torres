@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POLO TSCANO TORRES — Webs y landing pages para restaurantes y cafeterías</title>
+<style>
+:root{
+  --carbon:#181512;      /* fondo oscuro */
+  --crema:#F5EFE4;       /* texto claro / fondos claros */
+  --naranja:#F26B3A;     /* acento principal */
+  --ambar:#F2A93B;       /* acento secundario */
+  --verde:#3E7C59;       /* detalle */
+  --gris:#8A8478;
+  font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--carbon);color:var(--crema);font-size:17px;line-height:1.6;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3{line-height:1.1;letter-spacing:-.02em;}
+.contenedor{max-width:1080px;margin:0 auto;padding:0 22px;}
+section{padding:72px 0;}
+
+/* ---------- Botones ---------- */
+.btn{display:inline-block;padding:14px 26px;border-radius:99px;font-weight:800;font-size:16px;cursor:pointer;border:none;transition:transform .12s ease, box-shadow .12s ease, background .12s ease;}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(242,107,58,.35);}
+.btn:active{transform:translateY(0);}
+.btn-naranja{background:var(--naranja);color:#fff;}
+.btn-borde{background:transparent;border:2px solid var(--crema);color:var(--crema);}
+.btn-borde:hover{background:var(--crema);color:var(--carbon);box-shadow:none;}
+
+/* ---------- Encabezado ---------- */
+header{padding:26px 0;}
+header .contenedor{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;}
+.logo{font-weight:900;font-size:18px;letter-spacing:.02em;}
+.logo span{color:var(--naranja);}
+
+/* ---------- Hero ---------- */
+.hero{padding:60px 0 80px;position:relative;overflow:hidden;}
+.hero::before{content:"";position:absolute;right:-140px;top:-140px;width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle, rgba(242,107,58,.22), transparent 65%);pointer-events:none;}
+.hero h1{font-size:clamp(38px,6vw,64px);font-weight:900;max-width:760px;}
+.hero h1 em{font-style:normal;color:var(--naranja);}
+.hero .sub{margin:22px 0 10px;font-size:20px;color:#CFC8BA;max-width:640px;}
+.hero .cred{font-size:15px;color:var(--gris);margin-bottom:32px;}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap;}
+
+/* ---------- Franja de confianza ---------- */
+.franja{border-top:1px solid #2A2622;border-bottom:1px solid #2A2622;padding:18px 0;}
+.franja .contenedor{display:flex;gap:28px;flex-wrap:wrap;justify-content:center;font-size:14px;color:var(--gris);font-weight:700;letter-spacing:.04em;text-transform:uppercase;}
+
+/* ---------- Ejemplos (mockups) ---------- */
+.ejemplos h2, .servicios h2, .precios h2, .contacto h2{font-size:clamp(28px,4vw,40px);font-weight:900;margin-bottom:8px;}
+.sub-seccion{color:#CFC8BA;margin-bottom:38px;max-width:560px;}
+.rejilla-mock{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
+.mock{background:#221E19;border:1px solid #322D26;border-radius:14px;overflow:hidden;transition:transform .14s ease, box-shadow .14s ease;cursor:pointer;}
+.mock:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.45);}
+.mock .barra{display:flex;gap:6px;align-items:center;padding:9px 12px;background:#2C2username721;}
+.mock .barra i{width:9px;height:9px;border-radius:50%;display:block;}
+.mock .pantalla{height:190px;padding:14px;font-size:9px;position:relative;overflow:hidden;}
+.mock .pie{padding:14px 16px;}
+.mock .pie b{display:block;font-size:16px;}
+.mock .pie span{font-size:13px;color:var(--gris);}
+.mini-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.mini-nav .m-logo{font-weight:900;}
+.mini-nav .m-links{display:flex;gap:6px;}
+.mini-nav .m-links i{display:block;width:22px;height:4px;border-radius:2px;background:currentColor;opacity:.4;}
+.mini-btn{display:inline-block;padding:4px 10px;border-radius:99px;font-weight:800;font-size:8px;}
+.m-titulo{font-weight:900;font-size:15px;line-height:1.15;margin-bottom:6px;}
+.m-texto{opacity:.65;margin-bottom:8px;}
+.m-tarjetas{display:flex;gap:6px;margin-top:8px;}
+.m-tarjetas i{display:block;flex:1;height:34px;border-radius:6px;}
+
+/* Mockup 1: cafetería clara */
+.mock-cafe .pantalla{background:#F5EFE4;color:#3B2E20;}
+.mock-cafe .mini-btn{background:#3E7C59;color:#fff;}
+.mock-cafe .m-tarjetas i{background:#E4D8C2;}
+/* Mockup 2: restaurante oscuro */
+.mock-resto .pantalla{background:#151312;color:#F5EFE4;}
+.mock-resto .mini-btn{background:var(--naranja);color:#fff;}
+.mock-resto .m-tarjetas i{background:#2B2724;}
+/* Mockup 3: brunch colorido */
+.mock-brunch .pantalla{background:#FFF3E6;color:#7A2E1D;}
+.mock-brunch .mini-btn{background:#D9482B;color:#fff;}
+.mock-brunch .m-tarjetas i{background:#FBD9B4;}
+
+/* ---------- Servicios ---------- */
+.servicios{background:var(--crema);color:var(--carbon);border-radius:34px 34px 0 0;}
+.rejilla-serv{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;}
+.serv{background:#fff;border-radius:14px;padding:24px 22px;box-shadow:0 2px 10px rgba(24,21,18,.07);transition:transform .12s ease;}
+.serv:hover{transform:translateY(-4px);}
+.serv .ico{font-size:28px;}
+.serv b{display:block;margin:10px 0 6px;font-size:17px;}
+.serv p{font-size:14.5px;color:#5C564C;}
+.nota-clara{margin-top:26px;font-size:14px;color:#5C564C;background:#EFE6D4;border-radius:10px;padding:12px 16px;display:inline-block;}
+
+/* ---------- Precios ---------- */
+.precios{background:var(--crema);color:var(--carbon);padding-top:0;}
+.rejilla-precios{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;align-items:stretch;}
+.plan{background:#fff;border-radius:16px;padding:30px 26px;box-shadow:0 2px 10px rgba(24,21,18,.07);display:flex;flex-direction:column;}
+.plan.destacado{background:var(--carbon);color:var(--crema);box-shadow:0 14px 34px rgba(24,21,18,.35);position:relative;}
+.plan .etiqueta{position:absolute;top:-13px;left:26px;background:var(--naranja);color:#fff;font-size:12px;font-weight:900;padding:5px 12px;border-radius:99px;letter-spacing:.05em;}
+.plan h3{font-size:19px;}
+.plan .precio{font-size:42px;font-weight:900;margin:12px 0 4px;}
+.plan .precio small{font-size:15px;font-weight:600;color:var(--gris);}
+.plan ul{list-style:none;margin:16px 0 22px;flex:1;}
+.plan li{padding:6px 0;font-size:15px;}
+.plan li::before{content:"✓";color:var(--verde);font-weight:900;margin-right:8px;}
+.plan.destacado li::before{color:var(--ambar);}
+.plan .btn{text-align:center;}
+
+/* ---------- Contacto ---------- */
+.contacto{text-align:center;}
+.contacto p{max-width:520px;margin:0 auto 30px;color:#CFC8BA;}
+footer{padding:26px 0;border-top:1px solid #2A2622;font-size:14px;color:var(--gris);text-align:center;}
+
+@media (max-width:640px){ section{padding:52px 0;} }
+@media (prefers-reduced-motion:reduce){ *{transition:none !important;} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="contenedor">
+    <div class="logo">POLO <span>TSCANO</span> TORRES</div>
+    <a class="btn btn-naranja" href="#contacto">Pedir mi web</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="contenedor">
+    <h1>Tu restaurante o cafetería merece una web que <em>venda por ti</em>.</h1>
+    <p class="sub">Diseño webs y landing pages modernas para cafeterías, restaurantes y lugares de comida con dinámica. Tus clientes te encuentran, ven tu menú y reservan — todo desde su celular.</p>
+    <p class="cred">Freelancer de webs y landing pages · Profesional en informática</p>
+    <div class="cta">
+      <a class="btn btn-naranja" href="#precios">Ver precios</a>
+      <a class="btn btn-borde" href="#ejemplos">Ver ejemplos</a>
+    </div>
+  </div>
+</section>
+
+<div class="franja">
+  <div class="contenedor">
+    <span>☕ Cafeterías</span><span>🍔 Restaurantes casuales</span><span>🌮 Cocinas locales</span><span>🥐 Brunch & panaderías</span><span>🍕 Food spots</span>
+  </div>
+</div>
+
+<!-- EJEMPLOS -->
+<section class="ejemplos" id="ejemplos">
+  <div class="contenedor">
+    <h2>Así se ven las webs que hago</h2>
+    <p class="sub-seccion">Ejemplos de estilo — cada web se diseña a la medida de tu negocio, tus colores y tu comida.</p>
+    <div class="rejilla-mock">
+
+      <!-- Cafetería moderna -->
+      <div class="mock mock-cafe" onclick="alert('Ejemplo de estilo: cafetería moderna. Tu web se diseña a la medida de tu negocio ✨')">
+        <div class="barra"><i style="background:#E9573F"></i><i style="background:#F2A93B"></i><i style="background:#3E7C59"></i></div>
+        <div class="pantalla">
+          <div class="mini-nav"><span class="m-logo">Marea Café</span><span class="m-links"><i></i><i></i><i></i></span></div>
+          <div class="m-titulo">Café de especialidad,<br>todos los días.</div>
+          <div class="m-texto">Granos tostados en casa · WiFi · Pet friendly</div>
+          <span class="mini-btn">Reservar mesa</span>
+          <div class="m-tarjetas"><i></i><i></i><i></i></div>
+        </div>
+        <div class="pie"><b>Cafetería moderna</b><span>Menú · Reservas · Instagram · Maps</span></div>
+      </div>
+
+      <!-- Restaurante casual -->
+      <div class="mock mock-resto" onclick="alert('Ejemplo de estilo: restaurante casual. Tu web se diseña a la medida de tu negocio 🔥')">
+        <div class="barra"><i style="background:#E9573F"></i><i style="background:#F2A93B"></i><i style="background:#3E7C59"></i></div>
+        <div class="pantalla">
+          <div class="mini-nav"><span class="m-logo">BRASA 44</span><span class="m-links"><i></i><i></i><i></i></span></div>
+          <div class="m-titulo">Cortes al carbón<br>con alma de barrio.</div>
+          <div class="m-texto">Mar–Dom · 1pm a 11pm · Terraza</div>
+          <span class="mini-btn">Ver menú</span>
+          <div class="m-tarjetas"><i></i><i></i><i></i></div>
+        </div>
+        <div class="pie"><b>Restaurante casual</b><span>Menú · Ubicación · Teléfono · Redes</span></div>
+      </div>
+
+      <!-- Brunch -->
+      <div class="mock mock-brunch" onclick="alert('Ejemplo de estilo: brunch & bakery. Tu web se diseña a la medida de tu negocio 🥐')">
+        <div class="barra"><i style="background:#E9573F"></i><i style="background:#F2A93B"></i><i style="background:#3E7C59"></i></div>
+        <div class="pantalla">
+          <div class="mini-nav"><span class="m-logo">Golden Hour</span><span class="m-links"><i></i><i></i><i></i></span></div>
+          <div class="m-titulo">Brunch, pan dulce<br>y buenos momentos.</div>
+          <div class="m-texto">Pan recién horneado · Café de olla · Mimosas</div>
+          <span class="mini-btn">Reservar</span>
+          <div class="m-tarjetas"><i></i><i></i><i></i></div>
+        </div>
+        <div class="pie"><b>Brunch & bakery</b><span>Productos · Reservas · Maps · Redes</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="servicios">
+  <div class="contenedor">
+    <h2>Qué incluye tu web</h2>
+    <p class="sub-seccion">Todo lo que un lugar de comida necesita para que el cliente llegue, vea y venga.</p>
+    <div class="rejilla-serv">
+      <div class="serv"><div class="ico">📅</div><b>Reserva de mesas</b><p>Tus clientes apartan su mesa directo desde la web, sin llamadas perdidas.</p></div>
+      <div class="serv"><div class="ico">🍽️</div><b>Menú y productos</b><p>Muestra tus platillos, bebidas o productos con fotos y precios claros.</p></div>
+      <div class="serv"><div class="ico">📍</div><b>Ubicación con Google Maps</b><p>Tu local en el mapa, a un toque de "cómo llegar".</p></div>
+      <div class="serv"><div class="ico">📱</div><b>Redes sociales</b><p>Instagram, Facebook y TikTok conectados a tu web.</p></div>
+      <div class="serv"><div class="ico">📞</div><b>Teléfono a un clic</b><p>Botón de llamada directa desde el celular del cliente.</p></div>
+      <div class="serv"><div class="ico">💨</div><b>Rápida y para celular</b><p>Diseñada primero para móvil, que es donde te buscan tus clientes.</p></div>
+    </div>
+    <p class="nota-clara">Nota clara desde el inicio: mis webs <b>no incluyen pasarela de pagos</b> (cobros en línea). Todo lo demás, sí.</p>
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section class="precios" id="precios">
+  <div class="contenedor">
+    <h2>Precios directos, sin letras chiquitas</h2>
+    <p class="sub-seccion">El precio depende del grado de detalle que necesite tu web.</p>
+    <div class="rejilla-precios">
+
+      <div class="plan">
+        <h3>Landing page</h3>
+        <div class="precio">$350 <small>USD</small></div>
+        <ul>
+          <li>Una página con todo lo esencial</li>
+          <li>Menú o productos destacados</li>
+          <li>Google Maps y teléfono</li>
+          <li>Redes sociales</li>
+          <li>Lista para celular</li>
+        </ul>
+        <a class="btn btn-naranja" href="#contacto">La quiero</a>
+      </div>
+
+      <div class="plan">
+        <h3>Web completa</h3>
+        <div class="precio">Hasta $500 <small>USD</small></div>
+        <ul>
+          <li>Varias secciones a detalle</li>
+          <li>Reserva de mesas</li>
+          <li>Menú completo con fotos</li>
+          <li>Google Maps, teléfono y redes</li>
+          <li>Diseño 100% a tu estilo</li>
+        </ul>
+        <a class="btn btn-naranja" href="#contacto">La quiero</a>
+      </div>
+
+      <div class="plan destacado">
+        <span class="etiqueta">OFERTA</span>
+        <h3>Paquete 2 webs</h3>
+        <div class="precio">$500 <small>USD</small></div>
+        <ul>
+          <li>Dos webs por el precio de una completa</li>
+          <li>Ideal si tienes dos locales o socios</li>
+          <li>Todo lo del plan completo, en ambas</li>
+        </ul>
+        <a class="btn btn-naranja" href="#contacto">Aprovechar oferta</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <div class="contenedor">
+    <h2>¿Hacemos tu web?</h2>
+    <p>Mándame un mensaje con el nombre de tu negocio y qué necesitas. Te respondo con una propuesta el mismo día.</p>
+    <div class="cta" style="justify-content:center;display:flex;gap:14px;flex-wrap:wrap;">
+      <a class="btn btn-naranja" href="https://wa.me/520000000000" target="_blank">💬 WhatsApp</a>
+      <a class="btn btn-borde" href="https://m.me/TU_PERFIL" target="_blank">Messenger</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="contenedor">POLO TSCANO TORRES · Freelancer de webs y landing pages · Profesional en informática</div>
+</footer>
+
+</body>
+</html>
