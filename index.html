@@ -58,7 +58,8 @@ header .contenedor{display:flex;justify-content:space-between;align-items:center
 .mock:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.45);}
 .mock .barra{display:flex;gap:6px;align-items:center;padding:9px 12px;background:#2C2username721;}
 .mock .barra i{width:9px;height:9px;border-radius:50%;display:block;}
-.mock .pantalla{height:190px;padding:14px;font-size:9px;position:relative;overflow:hidden;}
+.mock .pantalla{height:190px;padding:0;position:relative;overflow:hidden;background:#2A2622;}
+.mock .pantalla img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;}
 .mock .pie{padding:14px 16px;}
 .mock .pie b{display:block;font-size:16px;}
 .mock .pie span{font-size:13px;color:var(--gris);}
@@ -184,39 +185,21 @@ footer{padding:26px 0;border-top:1px solid #2A2622;font-size:14px;color:var(--gr
       <!-- Cafetería moderna -->
       <div class="mock mock-cafe" onclick="alert('Ejemplo de estilo: cafetería moderna. Tu web se diseña a la medida de tu negocio ✨')">
         <div class="barra"><i style="background:#E9573F"></i><i style="background:#F2A93B"></i><i style="background:#3E7C59"></i></div>
-        <div class="pantalla">
-          <div class="mini-nav"><span class="m-logo">Marea Café</span><span class="m-links"><i></i><i></i><i></i></span></div>
-          <div class="m-titulo">Café de especialidad,<br>todos los días.</div>
-          <div class="m-texto">Granos tostados en casa · WiFi · Pet friendly</div>
-          <span class="mini-btn">Reservar mesa</span>
-          <div class="m-tarjetas"><i></i><i></i><i></i></div>
-        </div>
+        <div class="pantalla"><img src="img/ejemplo-1.jpg" alt="Ejemplo: web de cafetería moderna"></div>
         <div class="pie"><b>Cafetería moderna</b><span>Menú · Reservas · Instagram · Maps</span></div>
       </div>
 
       <!-- Restaurante casual -->
       <div class="mock mock-resto" onclick="alert('Ejemplo de estilo: restaurante casual. Tu web se diseña a la medida de tu negocio 🔥')">
         <div class="barra"><i style="background:#E9573F"></i><i style="background:#F2A93B"></i><i style="background:#3E7C59"></i></div>
-        <div class="pantalla">
-          <div class="mini-nav"><span class="m-logo">BRASA 44</span><span class="m-links"><i></i><i></i><i></i></span></div>
-          <div class="m-titulo">Cortes al carbón<br>con alma de barrio.</div>
-          <div class="m-texto">Mar–Dom · 1pm a 11pm · Terraza</div>
-          <span class="mini-btn">Ver menú</span>
-          <div class="m-tarjetas"><i></i><i></i><i></i></div>
-        </div>
+        <div class="pantalla"><img src="img/ejemplo-2.jpg" alt="Ejemplo: web de restaurante casual"></div>
         <div class="pie"><b>Restaurante casual</b><span>Menú · Ubicación · Teléfono · Redes</span></div>
       </div>
 
       <!-- Brunch -->
       <div class="mock mock-brunch" onclick="alert('Ejemplo de estilo: brunch & bakery. Tu web se diseña a la medida de tu negocio 🥐')">
         <div class="barra"><i style="background:#E9573F"></i><i style="background:#F2A93B"></i><i style="background:#3E7C59"></i></div>
-        <div class="pantalla">
-          <div class="mini-nav"><span class="m-logo">Golden Hour</span><span class="m-links"><i></i><i></i><i></i></span></div>
-          <div class="m-titulo">Brunch, pan dulce<br>y buenos momentos.</div>
-          <div class="m-texto">Pan recién horneado · Café de olla · Mimosas</div>
-          <span class="mini-btn">Reservar</span>
-          <div class="m-tarjetas"><i></i><i></i><i></i></div>
-        </div>
+        <div class="pantalla"><img src="img/ejemplo-3.jpg" alt="Ejemplo: web de brunch y bakery"></div>
         <div class="pie"><b>Brunch & bakery</b><span>Productos · Reservas · Maps · Redes</span></div>
       </div>
 
