@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>POLO TSCANO TORRES — Webs y landing pages para restaurantes y cafeterías</title>
+<title>POLO TOSCANO TORRES — Webs y landing pages para restaurantes y cafeterías</title>
 <style>
 :root{
   --carbon:#181512;      /* fondo oscuro */
@@ -115,7 +115,30 @@ header .contenedor{display:flex;justify-content:space-between;align-items:center
 .contacto p{max-width:520px;margin:0 auto 30px;color:#CFC8BA;}
 footer{padding:26px 0;border-top:1px solid #2A2622;font-size:14px;color:var(--gris);text-align:center;}
 
-@media (max-width:640px){ section{padding:52px 0;} }
+/* ---------- Animaciones 2D ---------- */
+@keyframes flotar{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-16px) rotate(4deg)}}
+@keyframes latir{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+@keyframes desfile{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes vapor{0%{opacity:0;transform:translateY(4px)}35%{opacity:.8}100%{opacity:0;transform:translateY(-18px)}}
+.flotantes{position:absolute;inset:0;pointer-events:none;}
+.flotantes span{position:absolute;font-size:34px;opacity:.85;animation:flotar 5s ease-in-out infinite;filter:drop-shadow(0 6px 10px rgba(0,0,0,.35));}
+.flotantes span:nth-child(1){top:14%;right:8%;animation-delay:0s;}
+.flotantes span:nth-child(2){top:48%;right:16%;animation-delay:1.2s;font-size:28px;}
+.flotantes span:nth-child(3){top:70%;right:6%;animation-delay:2.1s;font-size:30px;}
+.flotantes span:nth-child(4){top:26%;right:24%;animation-delay:3s;font-size:24px;}
+.taza{position:relative;display:inline-block;}
+.taza .humo{position:absolute;top:-14px;left:50%;font-size:13px;color:#CFC8BA;animation:vapor 2.6s ease-out infinite;}
+.taza .humo:nth-child(2){left:38%;animation-delay:.9s;}
+.taza .humo:nth-child(3){left:62%;animation-delay:1.7s;}
+.plan .etiqueta{animation:latir 2.2s ease-in-out infinite;}
+.franja{overflow:hidden;}
+.franja .contenedor{max-width:none;padding:0;display:flex;gap:0;justify-content:flex-start;}
+.cinta{display:flex;gap:38px;white-space:nowrap;animation:desfile 22s linear infinite;padding-right:38px;}
+.mock .barra i:nth-child(1){animation:latir 3s ease-in-out infinite;}
+.mock .barra i:nth-child(2){animation:latir 3s ease-in-out infinite .4s;}
+.mock .barra i:nth-child(3){animation:latir 3s ease-in-out infinite .8s;}
+
+@media (max-width:640px){ section{padding:52px 0;} .flotantes span{font-size:24px;} }
 @media (prefers-reduced-motion:reduce){ *{transition:none !important;} }
 </style>
 </head>
@@ -123,17 +146,18 @@ footer{padding:26px 0;border-top:1px solid #2A2622;font-size:14px;color:var(--gr
 
 <header>
   <div class="contenedor">
-    <div class="logo">POLO <span>TSCANO</span> TORRES</div>
+    <div class="logo">POLO <span>TOSCANO</span> TORRES</div>
     <a class="btn btn-naranja" href="#contacto">Pedir mi web</a>
   </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
+  <div class="flotantes"><span>☕</span><span>🌮</span><span>🥐</span><span>🍕</span></div>
   <div class="contenedor">
     <h1>Tu restaurante o cafetería merece una web que <em>venda por ti</em>.</h1>
     <p class="sub">Diseño webs y landing pages modernas para cafeterías, restaurantes y lugares de comida con dinámica. Tus clientes te encuentran, ven tu menú y reservan — todo desde su celular.</p>
-    <p class="cred">Freelancer de webs y landing pages · Profesional en informática</p>
+    <p class="cred"><span class="taza"><span class="humo">~</span><span class="humo">~</span><span class="humo">~</span>☕</span> Freelancer de webs y landing pages · Profesional en informática</p>
     <div class="cta">
       <a class="btn btn-naranja" href="#precios">Ver precios</a>
       <a class="btn btn-borde" href="#ejemplos">Ver ejemplos</a>
@@ -143,7 +167,10 @@ footer{padding:26px 0;border-top:1px solid #2A2622;font-size:14px;color:var(--gr
 
 <div class="franja">
   <div class="contenedor">
-    <span>☕ Cafeterías</span><span>🍔 Restaurantes casuales</span><span>🌮 Cocinas locales</span><span>🥐 Brunch & panaderías</span><span>🍕 Food spots</span>
+    <div class="cinta">
+      <span>☕ Cafeterías</span><span>🍔 Restaurantes casuales</span><span>🌮 Cocinas locales</span><span>🥐 Brunch & panaderías</span><span>🍕 Food spots</span>
+      <span>☕ Cafeterías</span><span>🍔 Restaurantes casuales</span><span>🌮 Cocinas locales</span><span>🥐 Brunch & panaderías</span><span>🍕 Food spots</span>
+    </div>
   </div>
 </div>
 
@@ -223,12 +250,12 @@ footer{padding:26px 0;border-top:1px solid #2A2622;font-size:14px;color:var(--gr
 
       <div class="plan">
         <h3>Landing page</h3>
-        <div class="precio">$350 <small>USD</small></div>
+        <div class="precio">$300 <small>USD</small></div>
         <ul>
-          <li>Una página con todo lo esencial</li>
+          <li>Una sola página con todo lo esencial</li>
           <li>Menú o productos destacados</li>
-          <li>Google Maps y teléfono</li>
-          <li>Redes sociales</li>
+          <li>Fotos e imágenes de tu negocio</li>
+          <li>Google Maps, teléfono y redes</li>
           <li>Lista para celular</li>
         </ul>
         <a class="btn btn-naranja" href="#contacto">La quiero</a>
@@ -236,13 +263,13 @@ footer{padding:26px 0;border-top:1px solid #2A2622;font-size:14px;color:var(--gr
 
       <div class="plan">
         <h3>Web completa</h3>
-        <div class="precio">Hasta $500 <small>USD</small></div>
+        <div class="precio">$350–$500 <small>USD</small></div>
         <ul>
-          <li>Varias secciones a detalle</li>
-          <li>Reserva de mesas</li>
-          <li>Menú completo con fotos</li>
+          <li><b>$350</b> — 2 páginas o secciones</li>
+          <li><b>$450</b> — 3 páginas</li>
+          <li><b>$500</b> — 4 páginas</li>
+          <li>Reserva de mesas y menú con fotos</li>
           <li>Google Maps, teléfono y redes</li>
-          <li>Diseño 100% a tu estilo</li>
         </ul>
         <a class="btn btn-naranja" href="#contacto">La quiero</a>
       </div>
@@ -252,9 +279,9 @@ footer{padding:26px 0;border-top:1px solid #2A2622;font-size:14px;color:var(--gr
         <h3>Paquete 2 webs</h3>
         <div class="precio">$500 <small>USD</small></div>
         <ul>
-          <li>Dos webs por el precio de una completa</li>
+          <li>2 webs de 3 páginas cada una</li>
           <li>Ideal si tienes dos locales o socios</li>
-          <li>Todo lo del plan completo, en ambas</li>
+          <li>Fotos, reservas, Maps y redes en ambas</li>
         </ul>
         <a class="btn btn-naranja" href="#contacto">Aprovechar oferta</a>
       </div>
@@ -269,14 +296,14 @@ footer{padding:26px 0;border-top:1px solid #2A2622;font-size:14px;color:var(--gr
     <h2>¿Hacemos tu web?</h2>
     <p>Mándame un mensaje con el nombre de tu negocio y qué necesitas. Te respondo con una propuesta el mismo día.</p>
     <div class="cta" style="justify-content:center;display:flex;gap:14px;flex-wrap:wrap;">
-      <a class="btn btn-naranja" href="https://wa.me/520000000000" target="_blank">💬 WhatsApp</a>
-      <a class="btn btn-borde" href="https://m.me/TU_PERFIL" target="_blank">Messenger</a>
+      <a class="btn btn-naranja" href="https://wa.me/527411306781" target="_blank">💬 WhatsApp: 741 130 6781</a>
+      <a class="btn btn-borde" href="tel:+527411306781">📞 Llamar</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="contenedor">POLO TSCANO TORRES · Freelancer de webs y landing pages · Profesional en informática</div>
+  <div class="contenedor">POLO TOSCANO TORRES · Freelancer de webs y landing pages · Profesional en informática</div>
 </footer>
 
 </body>
