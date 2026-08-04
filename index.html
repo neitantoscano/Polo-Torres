@@ -278,7 +278,7 @@ footer{padding:26px 0;border-top:1px solid #2A2622;font-size:14px;color:var(--gr
 
       <div class="plan">
         <h3>Basic website</h3>
-        <div class="precio">$400 <small>USD</small></div>
+        <div class="precio">$250 <small>USD</small></div>
         <ul>
           <li>1 to 2 pages</li>
           <li>Featured menu or services</li>
@@ -292,7 +292,7 @@ footer{padding:26px 0;border-top:1px solid #2A2622;font-size:14px;color:var(--gr
       <div class="plan destacado">
         <span class="etiqueta">⭐ MOST POPULAR</span>
         <h3>Complete website</h3>
-        <div class="precio">$600 <small>USD</small></div>
+        <div class="precio">$400 <small>USD</small></div>
         <ul>
           <li>3 to 4 detailed pages</li>
           <li>Table or appointment bookings</li>
@@ -305,8 +305,8 @@ footer{padding:26px 0;border-top:1px solid #2A2622;font-size:14px;color:var(--gr
 
       <div class="plan">
         <h3>Premium website</h3>
-        <div class="precio">$900 <small>USD</small></div>
-        <p style="font-weight:900;font-size:14px;background:#EFE6D4;border-radius:8px;padding:8px 12px;margin-top:14px;">Everything in the $600 plan, plus:</p>
+        <div class="precio">$600 <small>USD</small></div>
+        <p style="font-weight:900;font-size:14px;background:#EFE6D4;border-radius:8px;padding:8px 12px;margin-top:14px;">Everything in the $400 plan, plus:</p>
         <ul>
           <li><b>2 websites</b>: one in English, one in any language you choose</li>
           <li>5 to 6 pages each</li>
@@ -336,5 +336,35 @@ footer{padding:26px 0;border-top:1px solid #2A2622;font-size:14px;color:var(--gr
   <div class="contenedor">POLO TOSCANO TORRES · Freelance web & landing page designer · IT professional</div>
 </footer>
 
+
+<script>
+(function(){
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var sec=document.querySelector(".precios");
+  if(!sec) return;
+  var cont=document.createElement("div");
+  cont.className="burbujas-precios";
+  sec.prepend(cont);
+  var colores=[
+    ["rgba(242,107,58,.45)","rgba(242,107,58,.06)","rgba(242,107,58,.35)"],
+    ["rgba(242,169,59,.5)","rgba(242,169,59,.06)","rgba(242,169,59,.4)"],
+    ["rgba(62,124,89,.4)","rgba(62,124,89,.06)","rgba(62,124,89,.3)"]
+  ];
+  for(var k=0;k<28;k++){
+    var b=document.createElement("i");
+    var c=colores[k%3];
+    var t=8+Math.random()*24;
+    b.style.setProperty("--c1",c[0]);
+    b.style.setProperty("--c2",c[1]);
+    b.style.setProperty("--halo",c[2]);
+    b.style.width=t+"px"; b.style.height=t+"px";
+    b.style.left=(Math.random()*97)+"%";
+    b.style.bottom=(-40+Math.random()*90)+"%";
+    b.style.animationDuration=(5+Math.random()*8)+"s";
+    b.style.animationDelay=(Math.random()*8)+"s";
+    cont.appendChild(b);
+  }
+})();
+</script>
 </body>
 </html>
