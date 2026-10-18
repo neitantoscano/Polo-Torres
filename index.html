@@ -75,7 +75,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 .btn:not(.primary)::before{content:"";position:absolute;inset:0;background:#fff;transform:translateX(-101%);transition:transform .35s cubic-bezier(.2,.8,.2,1);z-index:-1}
 .btn:not(.primary):hover{color:#000}
 .btn:not(.primary):hover::before{transform:none}
-.facts{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:56px;font-family:var(--mono);font-size:13px;color:var(--mute);animation:fadeup .9s .65s both}
+.facts{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:40px;font-family:var(--mono);font-size:13px;color:var(--mute);animation:fadeup .9s .65s both}
 .facts b{color:#fff;font-weight:500}
 
 /* marquesina */
@@ -192,6 +192,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;
 
 
 /* redes */
+.hero-social{margin-top:22px;animation:fadeup .9s .58s both}
 .social{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .sbtn{--g:#fff;position:relative;isolation:isolate;display:inline-flex;align-items:center;gap:12px;padding:10px 20px 10px 10px;border-radius:99px;border:1px solid var(--line2);text-decoration:none;color:var(--fg);font-weight:600;overflow:hidden;
   transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s,color .35s;will-change:transform}
@@ -248,6 +249,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;
     <a class="btn primary mag" href="#proyectos">Ver proyectos <span class="arr">→</span></a>
     <a class="btn mag" href="#contacto">Quiero una app <span class="arr">→</span></a>
   </div>
+  <div class="social hero-social">
+        <a class="sbtn ig mag" href="https://www.instagram.com/dinier_sz" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.6-2.4h6.8L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13.2" r="3.4"/></svg></span><span><span class="lbl">Instagram</span><small>@dinier_sz</small></span></a>
+        <a class="sbtn tt mag" href="https://www.tiktok.com/@dinier_6" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg></span><span><span class="lbl">TikTok</span><small>@dinier_6</small></span></a>
+      </div>
   <div class="facts"><span><b>3</b> proyectos propios</span><span><b>1</b> ya en línea</span><span><b>2</b> en camino</span></div>
 </header>
 
